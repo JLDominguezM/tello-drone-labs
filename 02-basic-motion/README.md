@@ -4,6 +4,8 @@ Open loop motion. Every script in this folder uses blocking SDK
 primitives (`forward`, `cw`, `up`, ...) and exposes the same battery
 gated structure that the rest of the repo will mirror.
 
+[![Demo](https://img.shields.io/badge/Demo_video-YouTube-red?logo=youtube)](https://youtu.be/rVmfCdu8WVA)
+
 ## Scripts
 
 | File | Pattern |

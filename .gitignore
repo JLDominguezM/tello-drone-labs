@@ -20,12 +20,23 @@ Thumbs.db
 *.log
 *.tmp
 
-# Recorded evidence and figures (kept locally, not committed by default).
-# Comment these out if you want to commit a sample flight.
+# Recorded evidence (kept local, not committed by default).
 05-final-project-inspector/evidence/*.mp4
 05-final-project-inspector/evidence/*.csv
+
+# Timestamped inspection photos from new runs (the curated one from the
+# approved flight ships as inspection.png, without the timestamp).
 05-final-project-inspector/evidence/inspection_*.png
+
+# Figures: ignore by default, allow the curated set from the approved
+# flight so the README renders something on GitHub.
 05-final-project-inspector/figures/*.png
+!05-final-project-inspector/figures/mission_phases.png
+!05-final-project-inspector/figures/orbit_control.png
+!05-final-project-inspector/figures/orbit_vision.png
+!05-final-project-inspector/figures/hud_approach.png
+!05-final-project-inspector/figures/hud_orbit_static.png
+!05-final-project-inspector/figures/hud_orbit_dynamic.png
 
 # Recordings produced by the earlier labs
 03-rc-control-and-video/*.mp4

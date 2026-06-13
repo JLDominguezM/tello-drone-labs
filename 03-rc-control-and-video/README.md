@@ -9,6 +9,8 @@ final project depends on:
   * Onboard video. The Tello pushes an H.264 stream over UDP on port
     11111 with no acknowledgement.
 
+[![Demo](https://img.shields.io/badge/Demo_video-YouTube-red?logo=youtube)](https://youtu.be/NSjJu2TxvZ8)
+
 ## Scripts
 
 | File | What it does |

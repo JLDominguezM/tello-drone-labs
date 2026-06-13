@@ -6,15 +6,39 @@ back-to-back phases (one with the cone fixed, one where the operator
 moves the cone), takes a photograph of the inspected target, and
 lands.
 
-Approved flight: 2026-06-03. Demonstration video available
-[here](https://youtu.be/uXXDjiPWrlk).
+Approved flight: 2026-06-03.
+
+## Demo
+
+[![Watch the demo](https://img.shields.io/badge/Demo_video-YouTube-red?logo=youtube)](https://youtu.be/uXXDjiPWrlk)
+
+| Phase | Frame from the HUD |
+|---|---|
+| APPROACH | ![approach](figures/hud_approach.png) |
+| ORBIT_STATIC | ![orbit static](figures/hud_orbit_static.png) |
+| ORBIT_DYNAMIC | ![orbit dynamic](figures/hud_orbit_dynamic.png) |
+
+> The HUD overlay text in these frames is in Spanish because the
+> archive comes from the original approved flight. The committed
+> source code is in English; re-running `inspector_mission.py` will
+> render the HUD with the English labels.
 
 ## What the mission does
 
 State machine:
 
-```
-SEARCH -> APPROACH -> ORBIT_STATIC -> ORBIT_DYNAMIC -> CAPTURE -> LAND
+```mermaid
+stateDiagram-v2
+    [*] --> SEARCH
+    SEARCH --> APPROACH: cone detected
+    SEARCH --> LAND: search timeout
+    APPROACH --> SEARCH: lost for N frames
+    APPROACH --> ORBIT_STATIC: area > AREA_CLOSE
+    APPROACH --> LAND: approach timeout
+    ORBIT_STATIC --> ORBIT_DYNAMIC: 25 s elapsed
+    ORBIT_DYNAMIC --> CAPTURE: 25 s elapsed
+    CAPTURE --> LAND: photo saved
+    LAND --> [*]
 ```
 
 | Phase | Goal | Exit condition |
@@ -115,6 +139,42 @@ inspection_YYYYMMDD_HHMMSS.png          # frame captured in CAPTURE
 
 `analyze.py` reads the most recent CSV and writes the figures into
 `figures/`.
+
+## Results from the approved flight
+
+The plots below come from the CSV log of the 2026-06-03 flight that the
+professor approved.
+
+### Mission timeline
+
+![mission phases](figures/mission_phases.png)
+
+Each band is one phase; the duration of every band is annotated. The
+two orbit phases ran for the full 25 s as designed.
+
+### Control law during the orbit
+
+![orbit control](figures/orbit_control.png)
+
+`roll` is held at a constant lateral push, `pitch` follows the area
+error (advances when the cone shrinks, retreats when it grows), `yaw`
+keeps the cone centred. The dashed black line marks the moment the
+operator started moving the cone for phase 2.
+
+### Visual feedback during the orbit
+
+![orbit vision](figures/orbit_vision.png)
+
+Top: target area against the desired set-point of 35 000 px². Bottom:
+horizontal offset of the cone centroid; the grey band is the deadband
+where yaw stays at zero.
+
+### Inspection artefact
+
+The mission saves one frame as the inspection photo when entering the
+CAPTURE phase.
+
+![inspection](evidence/inspection.png)
 
 ## Safety
 

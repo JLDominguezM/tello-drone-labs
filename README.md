@@ -1,5 +1,11 @@
 # Tello Drone Labs
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-3776ab?logo=python&logoColor=white)](https://www.python.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.x-5C3EE8?logo=opencv&logoColor=white)](https://opencv.org/)
+[![Drone](https://img.shields.io/badge/Hardware-DJI%20Tello-000000?logo=dji)](https://www.ryzerobotics.com/tello)
+[![Final demo](https://img.shields.io/badge/Final_demo-YouTube-FF0000?logo=youtube&logoColor=white)](https://youtu.be/uXXDjiPWrlk)
+
 A progression of five labs, in Python, that builds up the components
 needed for an autonomous mission on a DJI Tello / RoboMaster TT. Every
 lab is self contained but builds on the previous one: the final project
@@ -8,15 +14,24 @@ in lab 05 reuses ideas from the four earlier labs.
 All scripts talk to the drone with raw UDP sockets. There is no
 `robomaster` or `djitellopy` dependency.
 
+## Demo
+
+The final project in action, with the HUD overlay showing the active
+phase frame by frame:
+
+[![Inspector demo](./05-final-project-inspector/figures/hud_orbit_dynamic.png)](https://youtu.be/uXXDjiPWrlk)
+
+> Click the frame to watch the Inspector mission on YouTube.
+
 ## Labs
 
-| # | Folder | Topic |
-|---|---|---|
-| 01 | [`01-connection-basics/`](./01-connection-basics/) | UDP link, SDK mode, the first takeoff |
-| 02 | [`02-basic-motion/`](./02-basic-motion/) | Blocking SDK primitives: `forward`, `cw`, trajectories |
-| 03 | [`03-rc-control-and-video/`](./03-rc-control-and-video/) | Continuous `rc` control, video stream recording |
-| 04 | [`04-visual-tracking/`](./04-visual-tracking/) | HSV detection plus a PD tracker on yaw and throttle |
-| 05 | [`05-final-project-inspector/`](./05-final-project-inspector/) | Autonomous Inspector: visual servoing with a state machine |
+| # | Folder | Topic | Demo |
+|---|---|---|---|
+| 01 | [`01-connection-basics/`](./01-connection-basics/) | UDP link, SDK mode, the first takeoff | [video](https://youtu.be/WFx7TkTSZhw) |
+| 02 | [`02-basic-motion/`](./02-basic-motion/) | Blocking SDK primitives: `forward`, `cw`, trajectories | [video](https://youtu.be/rVmfCdu8WVA) |
+| 03 | [`03-rc-control-and-video/`](./03-rc-control-and-video/) | Continuous `rc` control, video stream recording | [video](https://youtu.be/NSjJu2TxvZ8) |
+| 04 | [`04-visual-tracking/`](./04-visual-tracking/) | HSV detection plus a PD tracker on yaw and throttle | [video](https://youtu.be/FGLN-wSKNz8) |
+| 05 | [`05-final-project-inspector/`](./05-final-project-inspector/) | Autonomous Inspector: visual servoing with a state machine | [video](https://youtu.be/uXXDjiPWrlk) |
 
 Every lab folder ships its own README with the per-script breakdown,
 the relevant SDK details, and the safety notes specific to that lab.

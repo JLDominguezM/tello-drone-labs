@@ -3,6 +3,8 @@
 The first lab of the course. Three short scripts that verify the radio
 link and the SDK before any motor spins.
 
+[![Demo](https://img.shields.io/badge/Demo_video-YouTube-red?logo=youtube)](https://youtu.be/WFx7TkTSZhw)
+
 ## Scripts
 
 | File | What it does |

@@ -5,6 +5,8 @@ drone segments a colour blob with OpenCV and uses a PD controller to
 keep the blob centred while hovering. The same building blocks return
 in the final project.
 
+[![Demo](https://img.shields.io/badge/Demo_video-YouTube-red?logo=youtube)](https://youtu.be/FGLN-wSKNz8)
+
 ## Scripts
 
 | File | What it does |
