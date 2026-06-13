@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Generated artefacts
+*.log
+*.tmp
+
+# Recorded evidence and figures (kept locally, not committed by default).
+# Comment these out if you want to commit a sample flight.
+05-final-project-inspector/evidence/*.mp4
+05-final-project-inspector/evidence/*.csv
+05-final-project-inspector/evidence/inspection_*.png
+05-final-project-inspector/figures/*.png
+
+# Recordings produced by the earlier labs
+03-rc-control-and-video/*.mp4
+04-visual-tracking/*.mp4
